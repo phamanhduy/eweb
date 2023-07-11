@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Fixed Navbar Layout</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css?v=3.2.0">
+  <link rel="stylesheet" href="./style/home.css">
+  <script src="./js//lesson.js"></script>
+</head>
+
+<script>
+    const selectLesson = (id) => {
+      let lesson = lessons.find(l => l.id == id);
+      sessionStorage.setItem('selected', id || '1');
+      document.getElementById('content-lesson').innerHTML = lesson.description;
+      document.getElementById('title-lesson').innerHTML = lesson.title;
+      renderSidebar();
+    }
+
+    const renderSidebar = () => {
+      let lessonItem = '';
+      for (let i = 0; i < lessons.length; i++) {
+        const itemL = lessons[i];
+        lessonItem += `<li class="nav-item">
+            <a href="#" onclick='selectLesson(${itemL.id})' class="nav-link ${sessionStorage.getItem('selected') == itemL.id ? 'active' : ''}">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>${itemL.title}</p>
+            </a>
+          </li>`;
+          document.getElementById('sidebar-lesson').innerHTML = lessonItem;
+      }
+    } 
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+  // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCDq52WMJbyRxa_w6VWx8JyXNLO5LM2D9U",
+    authDomain: "login-8d4bd.firebaseapp.com",
+    projectId: "login-8d4bd",
+    storageBucket: "login-8d4bd.appspot.com",
+    messagingSenderId: "1063185419993",
+    appId: "1:1063185419993:web:92c3062df9bf97f21e78c8",
+    measurementId: "G-SVF9VMWBWM"
+  };
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+
+
+  const db = getFirestore(app);
+  // Get a list of cities from your database
+  async function getUserRegisted(db, email, cb) {
+    const userRef = collection(db, 'user-registed');
+    const q = query(userRef, where('email', '==', email));
+    const docSnap = await getDocs(q);
+    docSnap.forEach((doc) => {
+      let htmlBody = '';
+      if (doc) {
+        htmlBody = `<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a id='signOutWithGoogle' class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          Đăng xuất
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link elevation-4">
+      <img id='user-avatar' alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light" id="user-name">---</span>
+    </a>
+
+    <div class="sidebar">
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-header">Bài học</li>
+          <div id='sidebar-lesson'></div>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <!-- Default box -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title" id='title-lesson'>---</h3>
+              </div>
+              <div class="card-body" id='content-lesson'>
+              
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.2.0
+    </div>
+  </footer>
+  <style>
+
+</style>
+</div>`;}
+      document.getElementById('body-content').innerHTML = htmlBody;
+      cb();
+    });
+    return docSnap;
+  }
+
+  auth.onAuthStateChanged(user => {
+    if (user?.email) {
+      getUserRegisted(db, user?.email, () => {
+        selectLesson(sessionStorage.getItem('selected'));
+        document.getElementById('user-avatar').src = user?.photoURL;
+        document.getElementById('user-name').innerHTML = user?.displayName;
+        renderSidebar();
+      });
+      setTimeout(() => {
+        if (document.getElementById('signOutWithGoogle')) {
+          document.getElementById('signOutWithGoogle').addEventListener('click', signOutWithGoogle);
+        }
+      }, 1000)
+    } else {
+      let htmlBody = `<section class="socialMedia-container">
+                    <button id="signInWithGoogle">Login with your Google
+                      <img src="./img/google.svg" width="55px" height="55px" alt="Sign in with your Google account.">
+                    </button><br>
+                  </section>`;
+      document.getElementById('body-content').innerHTML = htmlBody;
+      setTimeout(() => {
+        if (document.getElementById('signInWithGoogle')) {
+          document.getElementById('signInWithGoogle').addEventListener('click', signInWithGoogle);
+          document.getElementById('signOutWithGoogle').addEventListener('click', signOutWithGoogle);
+        }
+      }, 1000);
+    }
+
+  })
+
+  const signInWithGoogle = () => {
+    const googleProvider = new GoogleAuthProvider();
+    googleProvider.addScope('profile');
+    googleProvider.addScope('email');
+    signInWithPopup(auth, googleProvider)
+      .then(() => {
+        window.location.reload();
+      })
+      .catch(error => {
+        console.error(error);
+      })
+  }
+
+  const signOutWithGoogle = () => {
+
+    signOut(auth)
+      .then(() => {
+        window.location.reload();
+      })
+      .catch(error => {
+        console.error(error);
+      })
+  }
+
+</script>
+
+<body class="sidebar-mini layout-fixed layout-navbar-fixed" id='body-content'>
+
+</body>
+<script>
+  function includeHTML(fileName) {
+    var z, i, elmnt, file, xhttp;
+    /*loop through a collection of all HTML elements:*/
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /*search for elements with a certain atrribute:*/
+      file = elmnt.getAttribute(fileName);
+      if (file) {
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4) {
+            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+            /*remove the attribute, and call this function once more:*/
+            elmnt.removeAttribute(fileName);
+            includeHTML();
+          }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /*exit the function:*/
+        return;
+      }
+    }
+  };
+
+  // TABS
+
+  // setTimeout(() => {
+  //   openCity(null, 'AN%20TO%C3%80N%20B%C3%89.html')
+  // }, 100);
+
+  function openCity(evt, cityName) {
+    document.getElementById('addHtmlContent').innerHTML = `<div id="loading" style="
+">Đang lấy dữ liệu...<div>
+</div></div>`;
+    if (evt) {
+      addHtmlContent(cityName)
+      var i, x, tablinks;
+      x = document.getElementsByClassName("city");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " w3-red";
+      setTimeout(() => {
+        includeHTML(cityName);
+      }, 10);
+    } else {
+      addHtmlContent(cityName)
+      setTimeout(() => {
+        document.getElementById('AN%20TO%C3%80N%20B%C3%89.html').style.display = "block";
+        // document.getElementById('firstButton').classList.add('w3-red');
+        // removeHTMLNotUse(cityName);
+        includeHTML(cityName);
+      }, 10);
+    }
+  }
+
+  function addHtmlContent(cityName) {
+    let htmlContent = `<div class="iframe-container">
+                <iframe src="https://zinson.vn/web"></iframe>
+              </div>`;
+
+    document.getElementById('addHtmlContent').innerHTML = htmlContent;
+  }
+</script>
+<!-- jQuery -->
+<script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<!-- <script src="./dist/js/demo.js"></script> -->
+
+</html>

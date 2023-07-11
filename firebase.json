@@ -1,0 +1,32 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/signup",
+        "destination": "./signup.html"
+      },
+      {
+        "source": "/profile",
+        "destination": "./profile.html"
+      },
+      {
+        "source": "/edit",
+        "destination": "./edit.html"
+      },
+      {
+        "source": "/reset",
+        "destination": "./reset.html"
+      },
+      {
+        "source": "/merge",
+        "destination": "./merge.html"
+      }
+    ]
+  }
+}
