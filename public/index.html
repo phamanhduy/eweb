@@ -19,27 +19,27 @@
 </head>
 
 <script>
-    const selectLesson = (id) => {
-      let lesson = lessons.find(l => l.id == id);
-      sessionStorage.setItem('selected', id || '1');
-      document.getElementById('content-lesson').innerHTML = lesson.description;
-      document.getElementById('title-lesson').innerHTML = lesson.title;
-      renderSidebar();
-    }
+  const selectLesson = (id) => {
+    let lesson = lessons.find(l => l.id == id);
+    sessionStorage.setItem('selected', id || '1');
+    document.getElementById('content-lesson').innerHTML = lesson?.description;
+    document.getElementById('title-lesson').innerHTML = lesson?.title;
+    renderSidebar();
+  }
 
-    const renderSidebar = () => {
-      let lessonItem = '';
-      for (let i = 0; i < lessons.length; i++) {
-        const itemL = lessons[i];
-        lessonItem += `<li class="nav-item">
+  const renderSidebar = () => {
+    let lessonItem = '';
+    for (let i = 0; i < lessons.length; i++) {
+      const itemL = lessons[i];
+      lessonItem += `<li class="nav-item">
             <a href="#" onclick='selectLesson(${itemL.id})' class="nav-link ${sessionStorage.getItem('selected') == itemL.id ? 'active' : ''}">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>${itemL.title}</p>
             </a>
           </li>`;
-          document.getElementById('sidebar-lesson').innerHTML = lessonItem;
-      }
-    } 
+      document.getElementById('sidebar-lesson').innerHTML = lessonItem;
+    }
+  } 
 </script>
 <script type="module">
   // Import the functions you need from the SDKs you need
@@ -64,12 +64,13 @@
 
   const db = getFirestore(app);
   // Get a list of cities from your database
-  async function getUserRegisted(db, email, cb) {
+  async function getUserRegisted(db, email, user, cb) {
+    console.log({ user })
     const userRef = collection(db, 'user-registed');
     const q = query(userRef, where('email', '==', email));
     const docSnap = await getDocs(q);
+    let htmlBody = '';
     docSnap.forEach((doc) => {
-      let htmlBody = '';
       if (doc) {
         htmlBody = `<div class="wrapper">
   <!-- Navbar -->
@@ -100,7 +101,7 @@
     <div class="sidebar">
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-header">Bài học</li>
+          <li class="nav-header">Module</li>
           <div id='sidebar-lesson'></div>
         </ul>
       </nav>
@@ -112,14 +113,16 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
+          <div class="col-md-12">
             <!-- Default box -->
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title" id='title-lesson'>---</h3>
               </div>
-              <div class="card-body" id='content-lesson'>
-              
+              <div class="col-md-9">
+                <div class="card-body" id='content-lesson'>
+                
+                </div>
               </div>
             </div>
             <!-- /.card -->
@@ -129,7 +132,6 @@
     </section>
     <!-- /.content -->
   </div>
-
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.2.0
@@ -138,17 +140,40 @@
   <style>
 
 </style>
-</div>`;}
+</div>`;
+      } else {
+        console.log(doc)
+        htmlBody = 'Tài khoản của bạn chưa được thanh toán'
+      }
       document.getElementById('body-content').innerHTML = htmlBody;
       cb();
     });
+    if (docSnap.size === 0) {
+      htmlBody = `<div id='payment-page' align="center">
+        <div class='col-md-4 mt-3' >
+        <div class="card card-primary card-outline">
+<div class="card-body box-profile">
+<div class="text-center">
+<img class="profile-user-img img-fluid img-circle" src="${user?.photoURL}" alt="User profile picture">
+</div>
+<h3 class="profile-username text-center">${user?.displayName}</h3>
+<p class="text-muted">Người dùng</p>
+<h4><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Bạn chưa thanh toán, vui lòng thanh toán để nhận ưu đãi.</h4>
+<a href="#" class="btn btn-primary btn-block"><b>Thanh toán ngay</b></a>
+</div>
+
+</div>
+        </div>
+        </div>`;
+      document.getElementById('body-content').innerHTML = htmlBody;
+    }
     return docSnap;
   }
 
   auth.onAuthStateChanged(user => {
     if (user?.email) {
-      getUserRegisted(db, user?.email, () => {
-        selectLesson(sessionStorage.getItem('selected'));
+      getUserRegisted(db, user?.email, user, () => {
+        selectLesson(sessionStorage.getItem('selected') || 1);
         document.getElementById('user-avatar').src = user?.photoURL;
         document.getElementById('user-name').innerHTML = user?.displayName;
         renderSidebar();
@@ -159,11 +184,24 @@
         }
       }, 1000)
     } else {
-      let htmlBody = `<section class="socialMedia-container">
-                    <button id="signInWithGoogle">Login with your Google
-                      <img src="./img/google.svg" width="55px" height="55px" alt="Sign in with your Google account.">
-                    </button><br>
-                  </section>`;
+      let htmlBody = `
+      <div class="login-box">
+        <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+          <h3>Đăng nhập tài liệu</h3>
+        </div>
+        <div class="card-body">
+        <p class="login-box-msg">
+          Dùng tài khoản google thường dùng để chúng tôi có thể hỗ trợ bạn tốt hơn
+        </p>
+        <div class="input-group mb-3">
+          <button id="signInWithGoogle">Login with your Google
+            <img src="./img/google.svg" width="55px" height="55px" alt="Sign in with your Google account.">
+          </button><br>
+        </div>
+        </div>
+        </div>
+        `;
       document.getElementById('body-content').innerHTML = htmlBody;
       setTimeout(() => {
         if (document.getElementById('signInWithGoogle')) {
@@ -173,8 +211,7 @@
       }, 1000);
     }
 
-  })
-
+  });
   const signInWithGoogle = () => {
     const googleProvider = new GoogleAuthProvider();
     googleProvider.addScope('profile');
@@ -187,9 +224,7 @@
         console.error(error);
       })
   }
-
   const signOutWithGoogle = () => {
-
     signOut(auth)
       .then(() => {
         window.location.reload();
@@ -202,7 +237,10 @@
 </script>
 
 <body class="sidebar-mini layout-fixed layout-navbar-fixed" id='body-content'>
-
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" alt="AdminLTELogo"
+      height="60" width="60">
+  </div>
 </body>
 <script>
   function includeHTML(fileName) {
