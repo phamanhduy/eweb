@@ -27,3 +27,14 @@
   #payment-page {
     margin: 0 auto;
   }
+  .video_container {
+    position: relative;
+  }
+  .video_container .video-js {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 110;
+  }

@@ -2,7 +2,9 @@ var lessons = [{
   id: '1',
   title: 'Đăng ký tên miền',
   video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
-  description: `<video width='100%' src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" controls></video>
+  description: `<video id='video-js1' class="video-js" data-setup='{"fluid": true}' controls>
+  <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
+  </video>
   <h1 id="ea3e002196e8f6f725c5d70c523fa9da6">Discover the riches of our editor ✨</h1>
   Read on to better understand the functionalities you can test with this demo.
   <h2 id="e64358fd18bbc9632ae1f4934d8fd95ea">💡 Did you know that…</h2>
