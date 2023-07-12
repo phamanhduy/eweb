@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Fixed Navbar Layout</title>
+  <title>Học làm web 2 giờ</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -17,19 +17,20 @@
   <link rel="stylesheet" href="./style/home.css">
   <link href="https://vjs.zencdn.net/7.14.3/video-js.min.css" rel="stylesheet">
   <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
-  <script src="./js//lesson.js"></script>
+  <script src="./js/lesson.js"></script>
 </head>
 
 <script>
+  var videoActive;
   const selectLesson = (id) => {
     let lesson = lessons.find(l => l.id == id);
     sessionStorage.setItem('selected', id || '1');
     document.getElementById('content-lesson').innerHTML = lesson?.description;
     document.getElementById('title-lesson').innerHTML = lesson?.title;
-    renderSidebar();
+    renderSidebar(id);
   }
 
-  const renderSidebar = () => {
+  const renderSidebar = (id) => {
     let lessonItem = '';
     for (let i = 0; i < lessons.length; i++) {
       const itemL = lessons[i];
@@ -41,6 +42,11 @@
           </li>`;
       document.getElementById('sidebar-lesson').innerHTML = lessonItem;
     }
+    videoActive?.dispose();
+    videoActive = videojs('video-js' + id);
+    // setInterval(() => {
+    // var whereYouAt = myVideo.currentTime();
+    // }, 2000);
   } 
 </script>
 <script type="module">
@@ -62,12 +68,9 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth();
-
-
   const db = getFirestore(app);
   // Get a list of cities from your database
   async function getUserRegisted(db, email, user, cb) {
-    console.log({ user })
     const userRef = collection(db, 'user-registed');
     const q = query(userRef, where('email', '==', email));
     const docSnap = await getDocs(q);
@@ -75,16 +78,13 @@
     docSnap.forEach((doc) => {
       if (doc) {
         htmlBody = `<div class="wrapper">
-  <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
     </ul>
-    <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search -->
       <li class="nav-item">
         <a id='signOutWithGoogle' class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           Đăng xuất
@@ -92,14 +92,11 @@
       </li>
     </ul>
   </nav>
-  <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
     <a href="#" class="brand-link elevation-4">
       <img id='user-avatar' alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light" id="user-name">---</span>
     </a>
-
     <div class="sidebar">
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -111,40 +108,32 @@
   </aside>
 
   <div class="content-wrapper">
-    <!-- Main content -->
-    <section class="content">
+    <section class="content mt-10">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <!-- Default box -->
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title" id='title-lesson'>---</h3>
+              <div class="card-header" align='center'>
+                <strong id='title-lesson'>---</strong>
               </div>
-              <div class="col-md-9">
+              <div class="col-md-10" style='margin: 0 auto;'>
                 <div class="card-body" id='content-lesson'>
                 
                 </div>
               </div>
             </div>
-            <!-- /.card -->
           </div>
         </div>
       </div>
     </section>
-    <!-- /.content -->
   </div>
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.2.0
     </div>
   </footer>
-  <style>
-
-</style>
 </div>`;
       } else {
-        console.log(doc)
         htmlBody = 'Tài khoản của bạn chưa được thanh toán'
       }
       document.getElementById('body-content').innerHTML = htmlBody;
@@ -154,17 +143,16 @@
       htmlBody = `<div id='payment-page' align="center">
         <div class='col-md-4 mt-3' >
         <div class="card card-primary card-outline">
-<div class="card-body box-profile">
-<div class="text-center">
-<img class="profile-user-img img-fluid img-circle" src="${user?.photoURL}" alt="User profile picture">
-</div>
-<h3 class="profile-username text-center">${user?.displayName}</h3>
-<p class="text-muted">Người dùng</p>
-<h4><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Bạn chưa thanh toán, vui lòng thanh toán để nhận ưu đãi.</h4>
-<a href="#" class="btn btn-primary btn-block"><b>Thanh toán ngay</b></a>
-</div>
-
-</div>
+          <div class="card-body box-profile">
+          <div class="text-center">
+          <img class="profile-user-img img-fluid img-circle" src="${user?.photoURL}" alt="User profile picture">
+          </div>
+          <h3 class="profile-username text-center">${user?.displayName}</h3>
+          <p class="text-muted">Người dùng</p>
+          <h4><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Bạn chưa thanh toán, vui lòng thanh toán để nhận ưu đãi.</h4>
+          <a href="#" class="btn btn-primary btn-block"><b>Thanh toán ngay</b></a>
+          </div>
+          </div>
         </div>
         </div>`;
       document.getElementById('body-content').innerHTML = htmlBody;
@@ -178,9 +166,6 @@
         selectLesson(sessionStorage.getItem('selected') || 1);
         document.getElementById('user-avatar').src = user?.photoURL;
         document.getElementById('user-name').innerHTML = user?.displayName;
-        renderSidebar();
-        var myVideo = videojs('video-js' + sessionStorage.getItem('selected'));
-        console.log({myVideo})
       });
       setTimeout(() => {
         if (document.getElementById('signOutWithGoogle')) {
