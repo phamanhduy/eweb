@@ -28,6 +28,20 @@
     document.getElementById('content-lesson').innerHTML = lesson?.description;
     document.getElementById('title-lesson').innerHTML = lesson?.title;
     renderSidebar(id);
+    videoActive?.dispose();
+    const infoVideos = [{ "label": "360P", "src": lesson.video, "res": 720 }];
+    const options = {
+      // nativeControlsForTouch: true,
+      controls: true,
+      sources: infoVideos,
+      playbackRates: [0.5, 1, 1.5, 2, 4],
+      fluid: true,
+      // autoplay: true,
+    };
+    videoActive = videojs('video-js' + id, options);
+    // setInterval(() => {
+    // var whereYouAt = myVideo.currentTime();
+    // }, 2000);
   }
 
   const renderSidebar = (id) => {
@@ -36,17 +50,12 @@
       const itemL = lessons[i];
       lessonItem += `<li class="nav-item">
             <a href="#" onclick='selectLesson(${itemL.id})' class="nav-link ${sessionStorage.getItem('selected') == itemL.id ? 'active' : ''}">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>${itemL.title}</p>
+              <i class="fa fa-window-restore" aria-hidden="true"></i>
+              <p>${itemL.sidebar}</p>
             </a>
           </li>`;
       document.getElementById('sidebar-lesson').innerHTML = lessonItem;
     }
-    videoActive?.dispose();
-    videoActive = videojs('video-js' + id);
-    // setInterval(() => {
-    // var whereYouAt = myVideo.currentTime();
-    // }, 2000);
   } 
 </script>
 <script type="module">
@@ -258,7 +267,6 @@
       }
     }
   };
-
   // TABS
 
   // setTimeout(() => {
@@ -298,7 +306,7 @@
 
   function addHtmlContent(cityName) {
     let htmlContent = `<div class="iframe-container">
-                <iframe src="https://zinson.vn/web"></iframe>
+                <iframe src="https://file.unica.vn/embed/287677"></iframe>
               </div>`;
 
     document.getElementById('addHtmlContent').innerHTML = htmlContent;
@@ -312,5 +320,4 @@
 <script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <!-- <script src="./dist/js/demo.js"></script> -->
-
 </html>
