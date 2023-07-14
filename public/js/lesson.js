@@ -2,8 +2,8 @@ var lessons = [
   {
     id: '1',
     type: 'video',
-    sidebar: 'Tại sao nên tự tạo wesite?',
-    title: 'Tại sao nên tự tạo wesite?',
+    sidebar: 'Tại sao nên tự tạo website?',
+    title: 'Tại sao nên tự tạo website?',
     video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
     description: `<video id='video-js1' key='video-js1' class="video-js" data-setup='{"fluid": true}' controls>
     <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
@@ -39,8 +39,8 @@ var lessons = [
 {
   id: '3',
   type: 'video',
-  sidebar: 'Đăng ký hosting',
-  title: 'Đăng ký hosting',
+  sidebar: 'Đăng ký VPS',
+  title: 'Đăng ký VPS',
   video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
   description: `
   <video id='video-js3' key='video-js3' class="video-js" data-setup='{"fluid": true}' controls>
@@ -61,14 +61,18 @@ var lessons = [
 },
 {
   id: '4',
-  type: 'form',
+  type: 'video',
   sidebar: 'Tool tạo website',
   title: 'Tool tạo website',
   video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
   description: `
-  <h2>
+  <video id='video-js4' key='video-js4' class="video-js" data-setup='{"fluid": true}' controls>
+  <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
+  </video>
+  <hr>
+  <h3>
     Sau khi cài đặt và kết nối được với VPS, chúng ta sẽ đi tạo lệnh cài website
-</h2>
+</h3>
 <p>
     <span style="color:hsl(30, 75%, 60%);">BƯỚC 1: Copy câu lênh bên dưới và bấm enter:</span>
 </p>
@@ -79,10 +83,10 @@ var lessons = [
 <p>
     &nbsp;
 </p>
-  <div class='col-lg-6 col-md-6 col-sm-7' style='margin: 0 auto;'>
+  <div class='col-lg-6 col-md-7 col-sm-7' style='margin: 0 auto;'>
   <div class="card card-primary">
 <div class="card-header">
-<h3 class="card-title">Tạo câu lênh tạo website</h3>
+<h3 class="card-title">Tạo lệnh tạo website</h3>
 </div>
 <div class="card-body">
 <div class="form-group">
@@ -91,21 +95,23 @@ var lessons = [
 </div>
 <div class="form-group">
 <label for="exampleInputEmail1">Email quản lý wordpress</label>
-<input type="email" class="form-control" id="email" placeholder="Email">
+<input type="text" class="form-control" id="email" placeholder="phamduy@gmail.com">
 </div>
 <div class="form-group">
 <label for="username">Username đăng nhập quản trị web</label>
-<input type="text" class="form-control" id="username" placeholder="Username">
+<input type="text" class="form-control" id="username" placeholder="phamduy">
 </div>
 <div class="form-group">
 <label for="exampleInputPassword1">Password đăng nhập quản trị web</label>
-<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+<input type="text" class="form-control" id="password" placeholder="phamduyH@">
 </div>
-<div class="card-footer">
-<button type="submit" class="btn btn-primary">Tạo lệnh</button>
+<div class="card-footer" id='footer-submit'>
+<button onclick='func.submitTool()' type="submit" class="btn btn-primary">Tạo lệnh</button>
 </div>
 </div>
   </div>
+  </div>
+  <div id='code-build-web'></div>
   `
 },
 ]
