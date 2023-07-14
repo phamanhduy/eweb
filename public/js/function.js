@@ -121,10 +121,10 @@ var func = {
         <div class="row">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header" align='center'>
+              <div class="card-header">
                 <strong id='title-lesson'>---</strong>
               </div>
-              <div class="col-md-10" style='margin: 0 auto;'>
+              <div class="col-md-9">
                 <div class="card-body" id='content-lesson'>
                 
                 </div>
