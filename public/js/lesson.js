@@ -1,6 +1,7 @@
 var lessons = [
   {
     id: '1',
+    type: 'video',
     sidebar: 'Tại sao nên tự tạo wesite?',
     title: 'Tại sao nên tự tạo wesite?',
     video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
@@ -12,6 +13,7 @@ var lessons = [
   }
   ,{
   id: '2',
+  type: 'video',
   sidebar: 'Chọn tên miền phù hợp',
   title: 'Chọn tên miền phù hợp',
   video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
@@ -36,6 +38,7 @@ var lessons = [
 },
 {
   id: '3',
+  type: 'video',
   sidebar: 'Đăng ký hosting',
   title: 'Đăng ký hosting',
   video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
@@ -55,6 +58,44 @@ var lessons = [
      <li>This demo showcases <a href="https://ckeditor.com/ckbox/" target="_blank" rel="noopener noreferrer">CKBox</a> <img src="https://ckeditor.com/assets/images/ckdemo/feature-rich/browse-files.png" sizes="100vw" srcset="https://ckeditor.com/assets/images/ckdemo/feature-rich/browse-files.png 2x" alt="Browse files" width="20" height="20" /> to <strong>manage images and other files</strong>. You can enable your own upload adapter instead.</li>
   </ul>
   &nbsp;`
-}
+},
+{
+  id: '4',
+  type: 'form',
+  sidebar: 'Tool tạo website',
+  title: 'Tool tạo website',
+  video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
+  description: `
+  <div class='col-lg-6 col-md-6 col-sm-7' style='margin: 0 auto;'>
+  <div class="card card-primary">
+<div class="card-header">
+<h3 class="card-title">Tạo câu lênh tạo website</h3>
+</div>
+<form>
+<div class="card-body">
+<div class="form-group">
+<label for="website">Website của bạn</label>
+<input type="text" class="form-control" id="website" placeholder="tuixachdep.com">
+</div>
+<div class="form-group">
+<label for="exampleInputEmail1">Email quản lý wordpress</label>
+<input type="email" class="form-control" id="email" placeholder="Email">
+</div>
+<div class="form-group">
+<label for="username">Username đăng nhập quản trị web</label>
+<input type="text" class="form-control" id="username" placeholder="Username">
+</div>
+<div class="form-group">
+<label for="exampleInputPassword1">Password đăng nhập quản trị web</label>
+<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+</div>
+<div class="card-footer">
+<button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+</div>
+  </div>
+  `
+},
 ]
 

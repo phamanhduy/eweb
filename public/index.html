@@ -28,6 +28,9 @@
     document.getElementById('content-lesson').innerHTML = lesson?.description;
     document.getElementById('title-lesson').innerHTML = lesson?.title;
     renderSidebar(id);
+    if (lesson.type !== 'video') {
+      return;
+    }
     videoActive?.dispose();
     const infoVideos = [{ "label": "360P", "src": lesson.video, "res": 720 }];
     const options = {
