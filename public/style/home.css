@@ -42,3 +42,12 @@
   #title-lesson {
     font-size: 20px;
   }
+
+  pre {
+    background-color: #ececec;
+    padding: 5px;
+  }
+  pre span {
+   float: right; padding: 8px 10px; background-color: #fff;border-radius: 4px;
+   cursor: pointer;
+  }

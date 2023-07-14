@@ -66,12 +66,24 @@ var lessons = [
   title: 'Tool tạo website',
   video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
   description: `
+  <h2>
+    Sau khi cài đặt và kết nối được với VPS, chúng ta sẽ đi tạo lệnh cài website
+</h2>
+<p>
+    <span style="color:hsl(30, 75%, 60%);">BƯỚC 1: Copy câu lênh bên dưới và bấm enter:</span>
+</p>
+<pre><code class="language-plaintext" id='install-cc'>wget -qO ee rt.cx/ee4 &amp;&amp; sudo bash ee</code> <span onclick="func.CopyToClipboard('install-cc')">Copy</span></pre>
+<p>
+    <span style="color:hsl(30,75%,60%);">BƯỚC 2: Nhập vào form các thông số cần vào copy câu lệnh:</span>
+</p>
+<p>
+    &nbsp;
+</p>
   <div class='col-lg-6 col-md-6 col-sm-7' style='margin: 0 auto;'>
   <div class="card card-primary">
 <div class="card-header">
 <h3 class="card-title">Tạo câu lênh tạo website</h3>
 </div>
-<form>
 <div class="card-body">
 <div class="form-group">
 <label for="website">Website của bạn</label>
@@ -90,9 +102,8 @@ var lessons = [
 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 </div>
 <div class="card-footer">
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary">Tạo lệnh</button>
 </div>
-</form>
 </div>
   </div>
   `
