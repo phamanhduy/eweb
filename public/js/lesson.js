@@ -14,9 +14,9 @@ var lessons = [
   , {
     id: '2',
     type: 'video',
-    sidebar: 'Chọn tên miền phù hợp',
-    title: 'Chọn tên miền phù hợp',
-    video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
+    sidebar: 'Đăng ký tên miền',
+    title: 'Đăng ký tên miền',
+    video: 'https://zinson.vn/wp-content/uploads/2023/07/0717.mp4',
     description: `<video id='video-js2' key='video-js2' class="video-js" data-setup='{"fluid": true}' controls>
   <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
   </video>

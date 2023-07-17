@@ -221,11 +221,13 @@ var func = {
       // nativeControlsForTouch: true,
       controls: true,
       sources: infoVideos,
-      playbackRates: [0.5, 1, 1.5, 2, 4],
+      playbackRates: [0.5, 1, 1.3, 1.5, 2, 4],
       fluid: true,
       // autoplay: true,
     };
-    videoActive = videojs('video-js' + id, options);
+    videoActive = videojs('video-js' + id, options).ready(function(){
+      this.playbackRate(1.3);
+    });;
     setInterval(() => {
     let myVideo = videoActive.currentTime();
     let totalTime = videoActive.duration();
