@@ -35,23 +35,31 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
 
 <script>
-  $(function () {
-
-    $(this).bind("contextmenu", function (e) {
-
-      e.preventDefault();
-
-    });
-
-  }); 
+  // $(function () {
+  //   $(this).bind("contextmenu", function (e) {
+  //     e.preventDefault();
+  //   });
+  // }); 
 </script>
 <script type="text/JavaScript">
-function killCopy(e){ return false } 
-function reEnable(){ return true } 
-document.onselectstart=new Function ("return false"); 
-if (window.sidebar)
-{ document.onmousedown=killCopy; 
-document.onclick=reEnable; } 
+// function killCopy(e){ return false } 
+// function reEnable(){ return true } 
+// document.onselectstart=new Function ("return false"); 
+// if (window.sidebar)
+// { document.onmousedown=killCopy; 
+// document.onclick=reEnable; }
 </script>
+
+<script type="text/JavaScript">
+  (function(d, s, id, t) {
+    if (d.getElementById(id)) return;
+    var js, fjs = d.getElementsByTagName(s)[0];
+    js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://widget.oncustomer.asia/js/index.js?token=' + t;
+    fjs.parentNode.insertBefore(js, fjs);}
+  (document, 'script', 'oc-chat-widget-bootstrap', '2f489c6d8237c36cc64c42b95e755250'));
+</script>
+
 
 </html>

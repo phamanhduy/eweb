@@ -16,7 +16,29 @@ var func = {
     const db = getFirestore(app);
     // Get a list of cities from your database
     auth.onAuthStateChanged(async (user) => {
+      setTimeout(() => {
+        (function(d, s, id, t) {
+          if (d.getElementById(id)) return;
+          var js, fjs = d.getElementsByTagName(s)[0];
+          js = d.createElement(s);
+          js.id = id;
+          js.src = 'https://widget.oncustomer.asia/js/index.js?token=' + t;
+          fjs.parentNode.insertBefore(js, fjs);}
+        (document, 'script', 'oc-chat-widget-bootstrap', '2f489c6d8237c36cc64c42b95e755250'));
+
+
+        window.OnCustomer.init({
+          userId: user?.uid, // Bắt buộc
+          email: user?.emain,
+          // phone: '',
+          firstName: user?.displayName,
+          lastName: user?.displayName,
+        })
+      }, 3000);
+
+
       if (user?.email) {
+
         const userRef = collection(db, 'user-registed');
         const q = query(userRef, where('email', '==', user?.email));
         const docSnap = await getDocs(q);
@@ -204,9 +226,15 @@ var func = {
       // autoplay: true,
     };
     videoActive = videojs('video-js' + id, options);
-    // setInterval(() => {
-    // var whereYouAt = myVideo.currentTime();
-    // }, 2000);
+    setInterval(() => {
+    let myVideo = videoActive.currentTime();
+    let totalTime = videoActive.duration();
+    let percentTime = (myVideo * 100) / totalTime;
+    if (percentTime >= 80) {
+      window.OnCustomer.showMessage('Bạn đã gần xem hết video, nếu muốn làm nhanh hơn, bổi 11')
+    }
+    console.log({myVideo, totalTime})
+    }, 1000);
   },
   renderSidebar: (id) => {
     let lessonItem = '';
