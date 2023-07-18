@@ -225,18 +225,17 @@ var func = {
       fluid: true,
       // autoplay: true,
     };
-    videoActive = videojs('video-js' + id, options).ready(function(){
-      this.playbackRate(1.3);
-    });;
-    setInterval(() => {
+    videoActive = videojs('video-js' + id, options);
+    // setInterval(() => {
     let myVideo = videoActive.currentTime();
     let totalTime = videoActive.duration();
+    videoActive.playbackRate(1.3);
     let percentTime = (myVideo * 100) / totalTime;
     if (percentTime >= 80) {
       window.OnCustomer.showMessage('Bạn đã gần xem hết video, nếu muốn làm nhanh hơn, bổi 11')
     }
     console.log({myVideo, totalTime})
-    }, 1000);
+    // }, 1000);
   },
   renderSidebar: (id) => {
     let lessonItem = '';
@@ -288,7 +287,7 @@ var func = {
     document.getElementById('code-build-web').innerHTML = `
     <pre><code class="language-plaintext" id="install-web">${string}</code> <span onclick="func.CopyToClipboard('install-web')">Copy</span></pre>
     `;
-    $.notify('Thanh công, hãy copy đoạn mã bên dưới đến hoàn thành tạo website', 'success', {
+    $.notify('Thành công, hãy copy đoạn mã bên dưới đến hoàn thành tạo website', 'success', {
       position: "center"
     });
   }

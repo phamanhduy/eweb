@@ -107,6 +107,13 @@ var lessons = [
   {
     id: '5',
     type: 'video',
+    attactment: {
+      themes: [{
+        name: 'Theme bán hàng túi xách',
+        link: 'https:sdsds.vn',
+      }],
+      plugin: [],
+    },
     sidebar: 'Tải Theme & Plugin',
     title: 'Theme và plugin tối ưu cho bán hàng',
     video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
