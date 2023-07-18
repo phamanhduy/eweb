@@ -10,13 +10,13 @@ var lessons = [
     </video>
     <hr>
     <h2>💡 Tại sao nên tự làm website</h2><ol><li><strong>Chi phí duy trì rẻ hơn rất nhiều</strong><br>- Khi mới kinh doanh việc đầu tự quá nhiều chi phí để thuê 1 bên thứ 3 làm website bán hàng cho bạn chi phí phải bỏ ra khá cao như như thiết kế giao diện, hosting hằng năng, phí bảo chì, rồi cài đặt plugin phải lên đến 5tr → 10tr là gói cơ bản (chưa tính phí duy trì), muốn làm thêm tính năng thì phải thêm tiền<br>- Vậy nên việc bạn có thể tự tạo làm 1 website có thể tiết kiệm rất nhiều tiền, chỉ phải bỏ ra phí ban đầu là tên miền, Thuê VPS theo tháng phí ban đầu chỉ quanh tầm 500k</li><li><strong>Chủ động trong việc cài plugin, thêm tính năng, không cần mất phí</strong><br>- Nếu bạn sử dụng wordpress để tạo website có thì sẽ có rất nhiều plugin bạn có thể thao tác cài 1 click nhanh chóng, không phải phụ thuộc bên thứ 3 sẽ tiết kiếm rất nhiều tiền sau này, plugin phong phú hơn rất nhiều so với các bên làm web</li><li><strong>Tạo được nhiều website cùng 1 lúc</strong><br>- Khi bạn chủ động mua cài website, Tài nguyên VPS do mình cầm nên mình hoàn toàn có thể build thêm rất nhiều website tương tự khác, trong trường hợp cần thay đổi tên miền, hay website cũng không bị bên dịch vụ moi tiền</li><li><strong>Chủ động tăng tải server khi có nhiều người dùng dễ dàng</strong><br>- Đa phân khi mới kinh doanh, chủ doanh nghiệp hoặc cá nhân chỉ cần 1 website chịu tải thấp tiết kiệm chi phí, nhưng lại vô cùng lãng phí khi sử dụng dịch vụ bên thứ 3 để làm website tốn đến hàng chục triệu đồng, Nhờ tự kiểm soát được VPS (hosting) mà người dùng tiết kiệm thêm rất nhiều tiền cho phần này, đôi khi chưa cần thiết có thể cho dừng website để tiết kiệm hoàn toàn chi phí</li></ol><h2>💡 Hoàn toàn có thể tạo website mà không cần biết lập trình?</h2><ol><li>Bạn chỉ cần đăng ký tên miền, và VPS theo hướng dẫn ở trong tài liệu này, việc tạo website còn lại ra do công cụ làm, theo tác thêm vài bước để tạo SSL là có ngay 1 website hoàn chỉnh cho bạn thao tác</li></ol><h2>&nbsp;</h2>`
-  }
-  , {
+  },
+  {
     id: '2',
     type: 'video',
     sidebar: 'Đăng ký tên miền',
     title: 'Đăng ký tên miền',
-    video: 'https://zinson.vn/wp-content/uploads/2023/07/0717.mp4',
+    video: 'https://zinson.vn/wp-content/uploads/2023/07/dangkytenmien.mp4',
     description: `<video id='video-js2' key='video-js2' class="video-js" data-setup='{"fluid": true}' controls>
   <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
   </video>
@@ -39,9 +39,9 @@ var lessons = [
   {
     id: '3',
     type: 'video',
-    sidebar: 'Đăng ký VPS',
+    sidebar: 'Đăng ký VPS (nhận 100$)',
     title: 'Đăng ký VPS',
-    video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
+    video: 'https://zinson.vn/wp-content/uploads/2023/07/dangkyvps.mp4',
     description: `
   <video id='video-js3' key='video-js3' class="video-js" data-setup='{"fluid": true}' controls>
   <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
@@ -52,11 +52,36 @@ var lessons = [
   {
     id: '4',
     type: 'video',
+    sidebar: 'Tạo và kết nối VPS',
+    title: 'Tạo và kết nối VPS',
+    video: 'https://zinson.vn/wp-content/uploads/2023/07/taovvs.mp4',
+    description: `<video id='video-js4' key='video-js4' class="video-js" data-setup='{"fluid": true}' controls>
+  <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
+  </video>
+  <hr>
+  <article><h1>Tải tool kết nối VPS</h1><p data-foo="bar">Click vào đây để tải xuống <a target="_blank" rel="noopener noreferrer" href="https://dl.bitvise.com/BvSshClient-Inst.exe" download="file">Bivice client SSH</a></p></article>`
+  },
+  {
+    id: '5',
+    type: 'video',
+    sidebar: 'Trỏ VPS vào tên miền',
+    title: 'Trỏ VPS vào tên miền',
+    video: 'https://zinson.vn/wp-content/uploads/2023/07/taovvs.mp4',
+    description: `
+  <video id='video-js5' key='video-js5' class="video-js" data-setup='{"fluid": true}' controls>
+  <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
+  </video>
+<article><details style="margin:10px auto" id="details-example"><summary><strong>VPS là gì?</strong><br>- Nếu bạn là người không chuyên, bạn sẽ nghe khái niệm Hosting nhiều hơn VPS, VPS hiểu 1 cách đơn giản là nơi để lưu trữ mã nguồn, hình ảnh, video website.. của bạn, Hosting được chia ra và nằm trong VPS nên khi bạn sở hưu 1 VPS bạn có thể làm được rất nhiều hosting khác nhau, có thể cài đặt rất nhiều website trong 1 VPS, có thể nâng cấp hoặc hạ cấp VPS để phù hợp với nhu cầu sử dụng website của bạn, điều này hosting khó có thể làm được</summary></details><hr><section><figure class="table"><table><tbody><tr><td>So sánh</td><td>VPS</td><td>HOSTING</td></tr><tr><td>Hiệu suất</td><td>Cao - Tài nguyên riêng biệt và xử lý mạnh mẽ</td><td>Thấp - Tài nguyên chia sẻ với nhiều người dùng khác<br>&nbsp;</td></tr><tr><td>Độ tin cậy</td><td>Cao - Không bị ảnh hưởng bởi hành động của người khác</td><td>Thấp - Một người dùng xấu có thể ảnh hưởng đến các trang web khác</td></tr><tr><td>Quản lý kiểm soát</td><td>Đầy đủ - Bạn có toàn quyền kiểm soát server</td><td>Hạn chế - Thường dùng giao diện điều khiển cung cấp bởi nhà cung cấp hosting</td></tr><tr><td>Bảo mật</td><td>Cao - Không chia sẻ tài nguyên với người khác</td><td>Thấp - Dễ bị tấn công nếu một trang web khác bị tấn công</td></tr><tr><td>Phạm vị sử dụng</td><td>Rộng - Phù hợp cho các dự án lớn, ứng dụng phức tạp</td><td>Hẹp - Thích hợp cho các trang web cá nhân, doanh nghiệp nhỏ</td></tr><tr><td>Gía cả</td><td>Cao - Chi phí cao hơn do sử dụng tài nguyên riêng biệt</td><td>Thấp - Giá rẻ hơn do tài nguyên được chia sẻ</td></tr><tr><td>Kỹ thuật</td><td>Cao - Đòi hỏi kiến thức kỹ thuật về quản lý máy chủ</td><td>Thấp - Không cần nhiều kiến thức kỹ thuật<br>&nbsp;</td></tr></tbody></table></figure><p>- Video trên mình sẽ tập chung hướng dẫn bạn tạo 1 VPS đơn giản, chi phí cực rẻ kể cả so với hosting, qua bước này đăng ký này bạn chỉ cần 2 câu lệnh là có thể tạo nên được 1 website nhanh chóng<br><br><a target="_blank" rel="noopener noreferrer" href="https://www.vultr.com/promo/try100/?service=try100" download="file"><strong>CLICK VÀO LINK NÀY ĐỂ NHẬN 100$ DÙNG VPS MIỄN PHÍ</strong></a></p></section></article>
+`
+  },
+  {
+    id: '6',
+    type: 'video',
     sidebar: 'Tool tạo website',
     title: 'Tool tạo website',
     video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
     description: `
-  <video id='video-js4' key='video-js4' class="video-js" data-setup='{"fluid": true}' controls>
+  <video id='video-js6' key='video-js6' class="video-js" data-setup='{"fluid": true}' controls>
   <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
   </video>
   <hr>
@@ -105,7 +130,7 @@ var lessons = [
   `
   },
   {
-    id: '5',
+    id: '7',
     type: 'video',
     attactment: {
       themes: [{
@@ -118,7 +143,7 @@ var lessons = [
     title: 'Theme và plugin tối ưu cho bán hàng',
     video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
     description: `
-  <video id='video-js5' key='video-js5' class="video-js" data-setup='{"fluid": true}' controls>
+  <video id='video-js7' key='video-js7' class="video-js" data-setup='{"fluid": true}' controls>
   <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
   </video>
   <hr>

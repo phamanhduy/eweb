@@ -35,15 +35,13 @@ var func = {
           lastName: user?.displayName,
         })
       }, 3000);
-
-
       if (user?.email) {
 
         const userRef = collection(db, 'user-registed');
         const q = query(userRef, where('email', '==', user?.email));
         const docSnap = await getDocs(q);
         func.getUserRegisted({ docSnap }, user, () => {
-          func.selectLesson(sessionStorage.getItem('selected') || 1);
+          func.selectLesson(sessionStorage.getItem('selected') || 1, true);
           document.getElementById('user-avatar').src = user?.photoURL;
           document.getElementById('user-name').innerHTML = user?.displayName;
         });
@@ -206,7 +204,10 @@ var func = {
       });
     }
   },
-  selectLesson: (id) => {
+  selectLesson: (id, loaded = false) => {
+    if (!loaded && sessionStorage.getItem('selected') == id) {
+      return;
+    }
     let lesson = lessons.find(l => l.id == id);
     sessionStorage.setItem('selected', id || '1');
     document.getElementById('content-lesson').innerHTML = lesson?.description;
