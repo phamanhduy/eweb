@@ -284,7 +284,7 @@ var func = {
       });
       return;
     }
-    let string = `ee site create ${website} --php=latest --type=wp --cache --admin-email=${email} --admin-user=${username} --admin-pass=${password}`;
+    let string = `ee site create ${website} --php=7.4 --type=wp --cache --admin-email=${email} --admin-user=${username} --admin-pass=${password}`;
     document.getElementById('code-build-web').innerHTML = `
     <pre><code class="language-plaintext" id="install-web">${string}</code> <span onclick="func.CopyToClipboard('install-web')">Copy</span></pre>
     `;
