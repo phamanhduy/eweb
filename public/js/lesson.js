@@ -66,7 +66,7 @@ var lessons = [
     type: 'video',
     sidebar: 'Trỏ VPS vào tên miền',
     title: 'Trỏ VPS vào tên miền',
-    video: 'https://zinson.vn/wp-content/uploads/2023/07/taovvs.mp4',
+    video: 'https://zinson.vn/wp-content/uploads/2023/07/trotenmien.mp4',
     description: `
   <video id='video-js5' key='video-js5' class="video-js" data-setup='{"fluid": true}' controls>
   <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
@@ -79,7 +79,7 @@ var lessons = [
     type: 'video',
     sidebar: 'Tool tạo website',
     title: 'Tool tạo website',
-    video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
+    video: 'https://zinson.vn/wp-content/uploads/2023/07/taoweb.mp4',
     description: `
   <video id='video-js6' key='video-js6' class="video-js" data-setup='{"fluid": true}' controls>
   <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
@@ -155,7 +155,7 @@ var lessons = [
   <hr>
     <ul class="mailbox-attachments d-flex align-items-stretch clearfix">
         <li>
-            <span class="mailbox-attachment-icon"><i class="far fa-file-pdf"></i></span>
+        <img style='width: 100%;' src='https://zinson.vn/wp-content/uploads/2023/07/anhgiaodienbanhang.png' />
             <div class="mailbox-attachment-info">
                 <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Giao diện bán hàng</a>
                 <span class="mailbox-attachment-size clearfix mt-1">
@@ -182,6 +182,16 @@ var lessons = [
                     <td>Thông báo telegram</td>
                     <td>
                         Khi có đơn hàng, thông báo sẽ được đẩy về telegram giúp dễ nhận biết có đơn hàng nhanh chóng
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Mua hàng nhanh</td>
+                    <td>
+                        Giúp khách hàng có thể mua hàng nhanh chóng, tránh phải qua quá nhiều bước để mua hàng
                     </td>
                     <td>
                         <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
