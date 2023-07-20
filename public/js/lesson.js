@@ -120,6 +120,12 @@ var lessons = [
 <label for="exampleInputPassword1">Password đăng nhập quản trị web</label>
 <input type="text" class="form-control" id="password" placeholder="phamduyH@">
 </div>
+
+<div class="form-check">
+<input type="checkbox" class="form-check-input" id="ssl" checked>
+<label class="form-check-label" for="exampleCheck1">Tạo SSL (https)</label>
+</div>
+<br>
 <div class="card-footer" id='footer-submit'>
 <button onclick='func.submitTool()' type="submit" class="btn btn-primary">Tạo lệnh</button>
 </div>

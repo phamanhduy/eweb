@@ -44,6 +44,7 @@ var func = {
           func.selectLesson(sessionStorage.getItem('selected') || 1, true);
           document.getElementById('user-avatar').src = user?.photoURL;
           document.getElementById('user-name').innerHTML = user?.displayName;
+          func.initCreateWeb();
         });
         setTimeout(() => {
           if (document.getElementById('signOutWithGoogle')) {
@@ -100,6 +101,29 @@ var func = {
           console.error(error);
         })
     }
+  },
+  initCreateWeb: () => {
+    let objWebDefault = {
+      website: 'lamweb2h.com',
+      email: 'lamweb2h@gmail.com',
+      username: 'lamweb2h',
+      password: 'lamweb2h5@R',
+      ssl: 'true',
+    }
+    if (sessionStorage.getItem('objWeb')) {
+      objWebDefault = JSON.parse(sessionStorage.getItem('objWeb'));
+      console.log({objWebDefault})
+    }
+    let website = document.getElementById('website');
+    let email = document.getElementById('email');
+    let username = document.getElementById('username');
+    let password = document.getElementById('password');
+    let ssl = document.getElementById('ssl');
+    website.value = objWebDefault.website;
+    email.value = objWebDefault.email;
+    username.value = objWebDefault.username;
+    password.value = objWebDefault.password;
+    ssl.checked = objWebDefault?.ssl;
   },
   getUserRegisted: ({ docSnap }, user, cb) => {
     let htmlBody = '';
@@ -256,6 +280,7 @@ var func = {
     let email = document.getElementById('email').value;
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
+    let ssl = document.getElementById('ssl').checked;
     const regexWebsite = /^[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const regexPass = /^[a-zA-Z0-9!@#$%^&*()]+$/;
@@ -284,7 +309,16 @@ var func = {
       });
       return;
     }
-    let string = `ee site create ${website} --php=7.4 --type=wp --cache --admin-email=${email} --admin-user=${username} --admin-pass=${password}`;
+    let objWeb = {
+      website,
+      email,
+      username,
+      password,
+      ssl,
+    };
+
+    sessionStorage.setItem('objWeb', JSON.stringify(objWeb));
+    let string = `ee site create ${website} --php=7.4 --type=wp --cache ${ssl ? '--ssl=le' : ''} --admin-email=${email} --admin-user=${username} --admin-pass=${password}`;
     document.getElementById('code-build-web').innerHTML = `
     <pre><code class="language-plaintext" id="install-web">${string}</code> <span onclick="func.CopyToClipboard('install-web')">Copy</span></pre>
     `;
