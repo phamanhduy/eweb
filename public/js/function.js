@@ -114,6 +114,9 @@ var func = {
       objWebDefault = JSON.parse(sessionStorage.getItem('objWeb'));
       console.log({objWebDefault})
     }
+    if (!document.getElementById('website')) {
+      return;
+    }
     let website = document.getElementById('website');
     let email = document.getElementById('email');
     let username = document.getElementById('username');
@@ -274,6 +277,7 @@ var func = {
           </li>`;
       document.getElementById('sidebar-lesson').innerHTML = lessonItem;
     }
+    func.initCreateWeb();
   },
   submitTool: () => {
     let website = document.getElementById('website').value;
@@ -283,7 +287,7 @@ var func = {
     let ssl = document.getElementById('ssl').checked;
     const regexWebsite = /^[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const regexPass = /^[a-zA-Z0-9!@#$%^&*()]+$/;
+    const regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     const regexUsername = /^[a-zA-Z0-9]{5,}$/;
     if (!regexWebsite.test(website)) {
       $('#website').notify('Hãy nhập website đúng định dạng VD: bantrasua.com', 'warn', {
@@ -304,7 +308,7 @@ var func = {
       return;
     }
     if (!regexPass.test(password)) {
-      $('#password').notify('Hãy nhập password đúng định dạng VD: duypham0Br', 'warn', {
+      $('#password').notify('Hãy nhập bao gồm chữ thường, chữ hoa, số, ký tự đặc biệt VD: duypham5@B', 'warn', {
         position: "right"
       });
       return;
