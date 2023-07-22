@@ -45,6 +45,7 @@ var func = {
           document.getElementById('user-avatar').src = user?.photoURL;
           document.getElementById('user-name').innerHTML = user?.displayName;
           func.initCreateWeb();
+          sessionStorage.setItem('userInfo', JSON.stringify(user));
         });
         setTimeout(() => {
           if (document.getElementById('signOutWithGoogle')) {
@@ -171,10 +172,16 @@ var func = {
               <div class="card-header">
                 <strong id='title-lesson'>---</strong>
               </div>
+              <div class="row">
               <div class="col-md-9">
-                <div class="card-body" id='content-lesson'>
-                
-                </div>
+              <div class="card-body" id='content-lesson'>
+              
+              </div>
+            </div>
+              
+              <div class="col-md-3" id='call-action-1'>
+
+</div>
               </div>
             </div>
           </div>
@@ -254,16 +261,68 @@ var func = {
       // autoplay: true,
     };
     videoActive = videojs('video-js' + id, options);
-    // setInterval(() => {
-    let myVideo = videoActive.currentTime();
-    let totalTime = videoActive.duration();
     videoActive.playbackRate(1.3);
-    let percentTime = (myVideo * 100) / totalTime;
+    let timeVideo1 = setInterval(() => {
+      let myVideo = videoActive.currentTime();
+      let totalTime = videoActive.duration();
+      let percentTime = (myVideo * 100) / totalTime;
+      if (percentTime >= 90 && $('.vjs-fullscreen-control').attr('title') === 'Exit Fullscreen') {
+        $('.vjs-fullscreen-control').trigger('click');
+        clearInterval(timeVideo1);
+      }
+    }, 1000);
+    let timeVideo = setInterval(() => {
+      let myVideo = videoActive.currentTime();
+      let totalTime = videoActive.duration();
+      let percentTime = (myVideo * 100) / totalTime;
     if (percentTime >= 80) {
-      window.OnCustomer.showMessage('Bạn đã gần xem hết video, nếu muốn làm nhanh hơn, bổi 11')
+      let user = JSON.parse(sessionStorage.getItem('userInfo'));
+      let htmlCallAction = `<div class="card card-warning">
+      <div class="card-header">
+      <h3 class="card-title">Chào <strong>${user?.displayName}</strong></h3>
+      <div class="card-tools">
+      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+      </button>
+      </div>
+      </div>
+      <div class='col-md-12'>
+      
+      <div class="text-center">
+      <img class="profile-user-img img-fluid img-circle" src="https://zinson.vn/wp-content/uploads/2023/07/323574724_1361808437920482_5469477596232757081_n.jpg" id='avatar-call-caction' alt="">
+      </div>
+      <h3 class="profile-username text-center">Duy Phạm</h3>
+      <p class="text-muted text-center">Software Engineer</p>
+<p>
+Mình là Duy, cảm ơn bạn đã đăng ký khóa học này,
+${user?.displayName} cứ follow hết các bước là sẽ làm được 1 website bạn hàng
+như ý muốn của mình nhé, mình sẽ cập nhật liên tục các tính năng plugin để tăng tỷ lệ chuyển đổi
+dễ bán hàng hơn cho website của bạn, Nếu ${user?.displayName} muốn cài đặt nhanh hơn thì
+có thể trao đổi trực tiếp 1:1 với mình nhé. cảm ơn ${user?.displayName}.
+</p>
+
+<strong class="card-warning">QUYỀN LỢI HỖ TRỢ 1:1</strong>
+<br>
+<span>Teamview hỗ trợ, chỉ tay trực tiếp làm website đến khi hoàn thành thì thôi</span>
+<hr>
+<span>Được chọn tùy ý các ngành nghề trong các giao diện dưới đây</span>
+<hr>
+<span>Hỗ trợ cài plugin, quản lý database</span>
+<hr>
+<span>Tư vấn cách triển khai bán hàng online khi mới bắt đầu</span>
+</div>
+<a href="javascript:void(0);" onclick='func.callContact()' class="btn btn-primary btn-block"><b>Liên hệ với mình</b></a>
+
+      </div>
+      </div>
+    
+      `;
+      document.getElementById('call-action-1').innerHTML = htmlCallAction;
+      clearInterval(timeVideo);
     }
-    console.log({myVideo, totalTime})
-    // }, 1000);
+    }, 1000);
+  },
+  callContact: () => {
+    window.OnCustomer.showMessage('Chào bạn, mình muốn liên hệ để nhờ hỗ trợ 1:1 trực tiếp');
   },
   renderSidebar: (id) => {
     let lessonItem = '';

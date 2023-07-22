@@ -155,12 +155,22 @@ var lessons = [
   <hr>
     <ul class="mailbox-attachments d-flex align-items-stretch clearfix">
         <li>
-        <img style='width: 100%;' src='https://zinson.vn/wp-content/uploads/2023/07/anhgiaodienbanhang.png' />
+        <img style='width: 100%;height: 145px;' src='https://zinson.vn/wp-content/uploads/2023/07/themechuacai.png' />
             <div class="mailbox-attachment-info">
-                <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Giao diện bán hàng</a>
+                <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Theme gốc</a>
                 <span class="mailbox-attachment-size clearfix mt-1">
-                    <span>6,245 KB</span>
-                    <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                    <span></span>
+                    <a href="https://zinson.vn/wp-content/uploads/2023/07/localhost_congnghe.maugiaodien.com_wpvivid-646e18b29c67e_2023-05-24-21-01_backup_all.zip" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                </span>
+            </div>
+        </li>
+        <li>
+        <img style='width: 100%;height: 145px;' src='https://zinson.vn/wp-content/uploads/2023/07/dacaiplugin.png' />
+            <div class="mailbox-attachment-info">
+                <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Theme đã cài plugin</a>
+                <span class="mailbox-attachment-size clearfix mt-1">
+                    <span></span>
+                    <a href="https://zinson.vn/wp-content/uploads/2023/07/localhost_congnghe.maugiaodien.com_wpvivid-646e18b29c67e_2023-05-24-21-01_backup_all.zip" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
                 </span>
             </div>
         </li>
@@ -184,7 +194,7 @@ var lessons = [
                         Khi có đơn hàng, thông báo sẽ được đẩy về telegram giúp dễ nhận biết có đơn hàng nhanh chóng
                     </td>
                     <td>
-                        <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                        <a href="https://zinson.vn/wp-content/uploads/2023/07/thongbaottelegram.zip" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
                     </td>
                 </tr>
                 <tr>
@@ -194,9 +204,49 @@ var lessons = [
                         Giúp khách hàng có thể mua hàng nhanh chóng, tránh phải qua quá nhiều bước để mua hàng
                     </td>
                     <td>
-                        <a href="#" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                        <a href="https://zinson.vn/wp-content/uploads/2023/07/devvn-quick-buy.zip" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
                     </td>
                 </tr>
+                <tr>
+                <td>3.</td>
+                <td>Thanh toán ngay</td>
+                <td>
+                    Để tránh tỷ lệ hoàn hàng, 1 chiến lược và công cụ phù hợp sẽ giúp giảm thiểu tối đa việc hoàn hàng
+                </td>
+                <td>
+                    <a href="https://zinson.vn/wp-content/uploads/2023/07/thanhtoanngay.zip" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                </td>
+            </tr>
+            <tr>
+            <td>4.</td>
+            <td>Phân loại sản phẩm</td>
+            <td>
+                Giúp bạn tạo phân loại sản phẩm qua hình ảnh màu sắc, giúp trang sản phẩm trong chuyên nghiệp hơn
+            </td>
+            <td>
+                <a href="https://zinson.vn/wp-content/uploads/2023/07/woo-variation-swatches.zip" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+            </td>
+        </tr>
+        <tr>
+        <td>5.</td>
+        <td>Review sản phẩm</td>
+        <td>
+            Giúp bạn tự tạo đánh giá, khách hàng cũng có thể đánh giá vào sp, làm tăng tỷ lệ chuyển đổi 
+        </td>
+        <td>
+            <a href="https://zinson.vn/wp-content/uploads/2023/07/devvn-woocommerce-reviews.zip" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+        </td>
+    </tr>
+    <tr>
+    <td>6.</td>
+    <td>Thông báo mua hàngh</td>
+    <td>
+        Thông báo mua hàng, giúp tạo hiệu ừng FOMO khi mua hàng, tăng chuyển đổi
+    </td>
+    <td>
+        <a href="https://zinson.vn/wp-content/uploads/2023/07/thongbaomuahang.zip" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+    </td>
+</tr>
             </tbody>
         </table>
 `
