@@ -293,7 +293,7 @@ var func = {
       <h3 class="profile-username text-center">Duy Phạm</h3>
       <p class="text-muted text-center">Software Engineer</p>
 <p>
-Mình là Duy, cảm ơn bạn đã đăng ký khóa học này,
+Mình là Duy, cảm ơn ${user?.displayName} đã đăng ký khóa học này,
 ${user?.displayName} cứ follow hết các bước là sẽ làm được 1 website bạn hàng
 như ý muốn của mình nhé, mình sẽ cập nhật liên tục các tính năng plugin để tăng tỷ lệ chuyển đổi
 dễ bán hàng hơn cho website của bạn, Nếu ${user?.displayName} muốn cài đặt nhanh hơn thì
@@ -303,11 +303,11 @@ có thể trao đổi trực tiếp 1:1 với mình nhé. cảm ơn ${user?.disp
 <strong class="card-warning">QUYỀN LỢI HỖ TRỢ 1:1</strong>
 <br>
 <span>Teamview hỗ trợ, chỉ tay trực tiếp làm website đến khi hoàn thành thì thôi</span>
-<hr>
+<hr style='margin-top: 2px; margin-bottom: 2px;'>
 <span>Được chọn tùy ý các ngành nghề trong các giao diện dưới đây</span>
-<hr>
+<hr style='margin-top: 2px; margin-bottom: 2px;'>
 <span>Hỗ trợ cài plugin, quản lý database</span>
-<hr>
+<hr style='margin-top: 2px; margin-bottom: 2px;'>
 <span>Tư vấn cách triển khai bán hàng online khi mới bắt đầu</span>
 </div>
 <a href="javascript:void(0);" onclick='func.callContact()' class="btn btn-primary btn-block"><b>Liên hệ với mình</b></a>

@@ -2,8 +2,8 @@ var lessons = [
   {
     id: '1',
     type: 'video',
-    sidebar: 'Tại sao nên tự tạo website?',
-    title: 'Tại sao nên tự tạo website?',
+    sidebar: 'Kết quả nhận được',
+    title: 'Kết quả nhận được',
     video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
     description: `<video id='video-js1' key='video-js1' class="video-js" data-setup='{"fluid": true}' controls>
     <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
@@ -82,7 +82,7 @@ var lessons = [
     video: 'https://zinson.vn/wp-content/uploads/2023/07/taoweb.mp4',
     description: `
   <video id='video-js6' key='video-js6' class="video-js" data-setup='{"fluid": true}' controls>
-  <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
+  <source src="https://zinson.vn/wp-content/uploads/2023/07/taoweb.mp4" type="video/mp4">
   </video>
   <hr>
   <h3>
@@ -147,20 +147,22 @@ var lessons = [
     },
     sidebar: 'Tải Theme & Plugin',
     title: 'Theme và plugin tối ưu cho bán hàng',
-    video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
+    video: 'https://zinson.vn/wp-content/uploads/2023/07/theme_congnghe.mp4',
     description: `
   <video id='video-js7' key='video-js7' class="video-js" data-setup='{"fluid": true}' controls>
-  <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
+  <source src="https://zinson.vn/wp-content/uploads/2023/07/theme_congnghe.mp4" type="video/mp4">
   </video>
   <hr>
+    <strong>Usernam đăng nhập mặc định: admin</strong>
+    <br>
     <ul class="mailbox-attachments d-flex align-items-stretch clearfix">
         <li>
         <img style='width: 100%;height: 145px;' src='https://zinson.vn/wp-content/uploads/2023/07/themechuacai.png' />
             <div class="mailbox-attachment-info">
                 <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Theme gốc</a>
                 <span class="mailbox-attachment-size clearfix mt-1">
-                    <span></span>
-                    <a href="https://zinson.vn/wp-content/uploads/2023/07/localhost_congnghe.maugiaodien.com_wpvivid-646e18b29c67e_2023-05-24-21-01_backup_all.zip" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                    <span>pass: lamweb2h@H </span>
+                    <a target="_blank" href="https://drive.google.com/file/d/1UGa4mhfOzYQwUbU8B53xQVjMAxVRz91P/view?usp=sharing" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
                 </span>
             </div>
         </li>
@@ -169,8 +171,8 @@ var lessons = [
             <div class="mailbox-attachment-info">
                 <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> Theme đã cài plugin</a>
                 <span class="mailbox-attachment-size clearfix mt-1">
-                    <span></span>
-                    <a href="https://zinson.vn/wp-content/uploads/2023/07/localhost_congnghe.maugiaodien.com_wpvivid-646e18b29c67e_2023-05-24-21-01_backup_all.zip" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
+                  <span>pass: lamweb2h@H </span>
+                    <a target="_blank" href="https://drive.google.com/file/d/1WcCKRlN1y6C2uIFuUqQcHiW3KQnm5EnW/view?usp=sharing" class="btn btn-default btn-sm float-right"><i class="fas fa-cloud-download-alt"></i></a>
                 </span>
             </div>
         </li>
@@ -239,7 +241,7 @@ var lessons = [
     </tr>
     <tr>
     <td>6.</td>
-    <td>Thông báo mua hàngh</td>
+    <td>Thông báo mua hàng</td>
     <td>
         Thông báo mua hàng, giúp tạo hiệu ừng FOMO khi mua hàng, tăng chuyển đổi
     </td>
