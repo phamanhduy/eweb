@@ -2,14 +2,44 @@ var lessons = [
   {
     id: '1',
     type: 'video',
-    sidebar: 'Kết quả nhận được',
-    title: 'Kết quả nhận được',
-    video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
+    sidebar: 'Kết quả đạt được',
+    title: 'Kết quả đạt được',
+    video: 'https://zinson.vn/wp-content/uploads/2023/07/ketquadaduoc.mp4',
     description: `<video id='video-js1' key='video-js1' class="video-js vjs-default-skin" data-setup='{"fluid": true}' controls>
-    <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
+    <source src="https://zinson.vn/wp-content/uploads/2023/07/ketquadaduoc.mp4" type="video/mp4">
     </video>
     <hr>
-    <h2>💡 Tại sao nên tự làm website</h2><ol><li><strong>Chi phí duy trì rẻ hơn rất nhiều</strong><br>- Khi mới kinh doanh việc đầu tự quá nhiều chi phí để thuê 1 bên thứ 3 làm website bán hàng cho bạn chi phí phải bỏ ra khá cao như như thiết kế giao diện, hosting hằng năng, phí bảo chì, rồi cài đặt plugin phải lên đến 5tr → 10tr là gói cơ bản (chưa tính phí duy trì), muốn làm thêm tính năng thì phải thêm tiền<br>- Vậy nên việc bạn có thể tự tạo làm 1 website có thể tiết kiệm rất nhiều tiền, chỉ phải bỏ ra phí ban đầu là tên miền, Thuê VPS theo tháng phí ban đầu chỉ quanh tầm 500k</li><li><strong>Chủ động trong việc cài plugin, thêm tính năng, không cần mất phí</strong><br>- Nếu bạn sử dụng wordpress để tạo website có thì sẽ có rất nhiều plugin bạn có thể thao tác cài 1 click nhanh chóng, không phải phụ thuộc bên thứ 3 sẽ tiết kiếm rất nhiều tiền sau này, plugin phong phú hơn rất nhiều so với các bên làm web</li><li><strong>Tạo được nhiều website cùng 1 lúc</strong><br>- Khi bạn chủ động mua cài website, Tài nguyên VPS do mình cầm nên mình hoàn toàn có thể build thêm rất nhiều website tương tự khác, trong trường hợp cần thay đổi tên miền, hay website cũng không bị bên dịch vụ moi tiền</li><li><strong>Chủ động tăng tải server khi có nhiều người dùng dễ dàng</strong><br>- Đa phân khi mới kinh doanh, chủ doanh nghiệp hoặc cá nhân chỉ cần 1 website chịu tải thấp tiết kiệm chi phí, nhưng lại vô cùng lãng phí khi sử dụng dịch vụ bên thứ 3 để làm website tốn đến hàng chục triệu đồng, Nhờ tự kiểm soát được VPS (hosting) mà người dùng tiết kiệm thêm rất nhiều tiền cho phần này, đôi khi chưa cần thiết có thể cho dừng website để tiết kiệm hoàn toàn chi phí</li></ol><h2>💡 Hoàn toàn có thể tạo website mà không cần biết lập trình?</h2><ol><li>Bạn chỉ cần đăng ký tên miền, và VPS theo hướng dẫn ở trong tài liệu này, việc tạo website còn lại ra do công cụ làm, theo tác thêm vài bước để tạo SSL là có ngay 1 website hoàn chỉnh cho bạn thao tác</li></ol><h2>&nbsp;</h2>`
+    <h3>
+    Kết quả đặt được
+</h3>
+<ol style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);box-sizing:border-box;color:rgb(33, 37, 41);font-family:&quot;Source Sans Pro&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;margin-bottom:1rem;margin-top:0px;orphans:2;text-align:left;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;">
+    <li style="box-sizing:border-box;">
+        <strong style="box-sizing:border-box;font-weight:bolder;">Tầm 2 tiếng bạn sẽ có ngay 1 website bán hàng (chạy quảng cáo fb, google, tiktok) chuyển đổi tốt</strong>
+    </li>
+    <li style="box-sizing:border-box;">
+        <strong>&nbsp;Website đã có đầy đủ plugin tối ưu cho việc bán hàng chuyên nghiệp, chuẩn SEO</strong>
+    </li>
+    <li style="box-sizing:border-box;">
+        <strong>Giúp bạn tiết kiệm gần 10tr tiền ban đầu để xây dựng 1 website bán hàng</strong>
+    </li>
+    <li style="box-sizing:border-box;">
+        <strong>Mình sẽ cập nhật liên tục các plugin hay công cụ cần thiết cho website bán hàng của bạn</strong>
+    </li>
+    <li style="box-sizing:border-box;">
+        <strong>Có thể tạo được nhiều website tùy thích</strong>
+    </li>
+</ol>
+<h3>
+    Ai có làm được được website
+</h3>
+<ol>
+    <li style="box-sizing:border-box;">
+        <strong>Tất cả mọi người có thể làm được, chỉ cần có máy tính</strong>
+    </li>
+    <li style="box-sizing:border-box;">
+        <strong>Không cần phải biết lập trình</strong>
+    </li>
+</ol>`
   },
   {
     id: '2',
