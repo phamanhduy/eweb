@@ -5,7 +5,7 @@ var lessons = [
     sidebar: 'Kết quả nhận được',
     title: 'Kết quả nhận được',
     video: 'https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4',
-    description: `<video id='video-js1' key='video-js1' class="video-js" data-setup='{"fluid": true}' controls>
+    description: `<video id='video-js1' key='video-js1' class="video-js vjs-default-skin" data-setup='{"fluid": true}' controls>
     <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
     </video>
     <hr>

@@ -277,7 +277,7 @@ var func = {
       let percentTime = (myVideo * 100) / totalTime;
     if (percentTime >= 80) {
       let user = JSON.parse(sessionStorage.getItem('userInfo'));
-      let htmlCallAction = `<div class="card card-warning">
+      let htmlCallAction = `<div class="card card-danger">
       <div class="card-header">
       <h3 class="card-title">Chào <strong>${user?.displayName}</strong></h3>
       <div class="card-tools">
@@ -288,7 +288,7 @@ var func = {
       <div class='col-md-12'>
       
       <div class="text-center">
-      <img class="profile-user-img img-fluid img-circle" src="https://zinson.vn/wp-content/uploads/2023/07/323574724_1361808437920482_5469477596232757081_n.jpg" id='avatar-call-caction' alt="">
+      <img class="profile-user-img img-fluid img-circle mt-1" src="https://zinson.vn/wp-content/uploads/2023/07/323574724_1361808437920482_5469477596232757081_n.jpg" id='avatar-call-caction' alt="">
       </div>
       <h3 class="profile-username text-center">Duy Phạm</h3>
       <p class="text-muted text-center">Software Engineer</p>
@@ -310,7 +310,9 @@ có thể trao đổi trực tiếp 1:1 với mình nhé. cảm ơn ${user?.disp
 <hr style='margin-top: 2px; margin-bottom: 2px;'>
 <span>Tư vấn cách triển khai bán hàng online khi mới bắt đầu</span>
 </div>
-<a href="javascript:void(0);" onclick='func.callContact()' class="btn btn-primary btn-block"><b>Liên hệ với mình</b></a>
+<div class='card-footer'>
+<a href="javascript:void(0);" onclick='func.callContact()' class="btn btn-danger btn-block"><b>Liên hệ với mình</b></a>
+</div>
 
       </div>
       </div>
