@@ -51,20 +51,44 @@ var lessons = [
   <source src="http://localhost:4000/dangkytenmien.mp4/video.m3u8" type="video/mp4">
   </video>
   <hr>
-  <h2 id="e33981ec17b5480108f981996fda52978">✨T&ecirc;n miền l&agrave; g&igrave;?</h2>
-<p style="margin-left: 40px;">T&ecirc;n miền l&agrave; địa chỉ điện tử tr&ecirc;n Internet, được sử dụng để định danh v&agrave; truy cập v&agrave;o một trang web cụ thể. V&iacute; dụ, trong t&ecirc;n miền "google.com", "google" l&agrave; phần t&ecirc;n v&agrave; ".com" l&agrave; phần đu&ocirc;i.</p>
-<h2 id="eb73583350861a9c9e748e38f4aec4563">💡 C&aacute;ch chọn t&ecirc;n miền ph&ugrave; hợp</h2>
-<ol>
-<li>Li&ecirc;n quan đến t&ecirc;n v&agrave; ng&agrave;nh nghề: Chọn một t&ecirc;n miền li&ecirc;n quan trực tiếp hoặc gợi nhớ đến t&ecirc;n hoặc ng&agrave;nh nghề của bạn. Điều n&agrave;y gi&uacute;p người d&ugrave;ng dễ d&agrave;ng nhớ v&agrave; t&igrave;m thấy trang web của bạn.</li>
-<li>Ngắn v&agrave; dễ g&otilde;: Chọn một t&ecirc;n miền ngắn v&agrave; dễ g&otilde; để tr&aacute;nh nhầm lẫn v&agrave; gi&uacute;p người d&ugrave;ng dễ d&agrave;ng nhập v&agrave;o tr&igrave;nh duyệt web.</li>
-<li>Tr&aacute;nh c&aacute;c k&yacute; tự phức tạp: Hạn chế sử dụng c&aacute;c k&yacute; tự đặc biệt, số lượng dấu gạch ngang hoặc k&yacute; tự viết hoa trong t&ecirc;n miền. Điều n&agrave;y gi&uacute;p tr&aacute;nh sự nhầm lẫn v&agrave; tạo sự thuận tiện cho người d&ugrave;ng.</li>
-<li>Đu&ocirc;i t&ecirc;n miền ph&ugrave; hợp: Đu&ocirc;i t&ecirc;n miền (như .com, .net, .org) c&oacute; thể tạo ấn tượng kh&aacute;c nhau. Đu&ocirc;i .com phổ biến v&agrave; th&iacute;ch hợp cho c&aacute;c doanh nghiệp thương mại, trong khi .org thường được sử dụng cho c&aacute;c tổ chức phi lợi nhuận. Ngo&agrave;i ra, c&oacute; thể xem x&eacute;t sử dụng đu&ocirc;i t&ecirc;n miền quốc gia (như .vn cho Việt Nam) nếu kinh doanh hướng tới một thị trường cụ thể.</li>
-<li>Bảo vệ thương hiệu: Trước khi đăng k&yacute; t&ecirc;n miền, h&atilde;y kiểm tra xem c&oacute; c&aacute;c t&ecirc;n miền tương tự đ&atilde; được sử dụng hay chưa để tr&aacute;nh việc nhầm lẫn hoặc tranh chấp. Ngo&agrave;i ra, nếu thương hiệu của bạn quan trọng, h&atilde;y xem x&eacute;t đăng k&yacute; c&aacute;c biến thể t&ecirc;n miền để bảo vệ quyền sở hữu tr&iacute; tuệ của bạn.</li>
-<li>Đăng k&yacute; t&ecirc;n miền từ nh&agrave; cung cấp uy t&iacute;n: Chọn nh&agrave; cung cấp t&ecirc;n miền đ&aacute;ng tin cậy v&agrave; được c&ocirc;ng nhận để đảm bảo quyền sở hữu v&agrave; hỗ trợ kỹ thuật đầy đủ.</li>
-<li>Lưu &yacute; rằng việc chọn t&ecirc;n miền l&agrave; một qu&aacute; tr&igrave;nh quan trọng v&agrave; cần xem x&eacute;t kỹ lưỡng. Nếu bạn gặp kh&oacute; khăn hoặc cần tư vấn cụ thể, h&atilde;y tham khảo c&aacute;c chuy&ecirc;n gia hoặc nh&agrave; cung cấp dịch vụ t&ecirc;n miền để được hỗ trợ tốt nhất.</li>
+  <h2 style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);box-sizing:border-box;color:rgb(33, 37, 41);font-family:&quot;Source Sans Pro&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;font-size:2rem;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:500;letter-spacing:normal;line-height:1.2;margin-bottom:0.5rem;margin-top:0px;orphans:2;text-align:left;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;" id="e33981ec17b5480108f981996fda52978">
+    ✨Tên miền là gì?
+</h2>
+<p style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);box-sizing:border-box;color:rgb(33, 37, 41);font-family:&quot;Source Sans Pro&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;margin-bottom:1rem;margin-left:40px;margin-top:0px;orphans:2;text-align:left;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;">
+    Tên miền là địa chỉ điện tử trên Internet, được sử dụng để định danh và truy cập vào một trang web cụ thể. Ví dụ, trong tên miền "google.com", "google" là phần tên và ".com" là phần đuôi.
+</p>
+<h2 style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);box-sizing:border-box;color:rgb(33, 37, 41);font-family:&quot;Source Sans Pro&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;font-size:2rem;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:500;letter-spacing:normal;line-height:1.2;margin-bottom:0.5rem;margin-top:0px;orphans:2;text-align:left;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;" id="eb73583350861a9c9e748e38f4aec4563">
+    💡 Cách chọn tên miền phù hợp
+</h2>
+<ol style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);box-sizing:border-box;color:rgb(33, 37, 41);font-family:&quot;Source Sans Pro&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;margin-bottom:1rem;margin-top:0px;orphans:2;text-align:left;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;">
+    <li style="box-sizing:border-box;">
+        Liên quan đến tên và ngành nghề: Chọn một tên miền liên quan trực tiếp hoặc gợi nhớ đến tên hoặc ngành nghề của bạn. Điều này giúp người dùng dễ dàng nhớ và tìm thấy trang web của bạn.
+    </li>
+    <li style="box-sizing:border-box;">
+        Ngắn và dễ gõ: Chọn một tên miền ngắn và dễ gõ để tránh nhầm lẫn và giúp người dùng dễ dàng nhập vào trình duyệt web.
+    </li>
+    <li style="box-sizing:border-box;">
+        Tránh các ký tự phức tạp: Hạn chế sử dụng các ký tự đặc biệt, số lượng dấu gạch ngang hoặc ký tự viết hoa trong tên miền. Điều này giúp tránh sự nhầm lẫn và tạo sự thuận tiện cho người dùng.
+    </li>
+    <li style="box-sizing:border-box;">
+        Đuôi tên miền phù hợp: Đuôi tên miền (như .com, .net, .org) có thể tạo ấn tượng khác nhau. Đuôi .com phổ biến và thích hợp cho các doanh nghiệp thương mại, trong khi .org thường được sử dụng cho các tổ chức phi lợi nhuận. Ngoài ra, có thể xem xét sử dụng đuôi tên miền quốc gia (như .vn cho Việt Nam) nếu kinh doanh hướng tới một thị trường cụ thể.
+    </li>
+    <li style="box-sizing:border-box;">
+        Bảo vệ thương hiệu: Trước khi đăng ký tên miền, hãy kiểm tra xem có các tên miền tương tự đã được sử dụng hay chưa để tránh việc nhầm lẫn hoặc tranh chấp. Ngoài ra, nếu thương hiệu của bạn quan trọng, hãy xem xét đăng ký các biến thể tên miền để bảo vệ quyền sở hữu trí tuệ của bạn.
+    </li>
+    <li style="box-sizing:border-box;">
+        Đăng ký tên miền từ nhà cung cấp uy tín: Chọn nhà cung cấp tên miền đáng tin cậy và được công nhận để đảm bảo quyền sở hữu và hỗ trợ kỹ thuật đầy đủ.
+    </li>
+    <li style="box-sizing:border-box;">
+        Lưu ý rằng việc chọn tên miền là một quá trình quan trọng và cần xem xét kỹ lưỡng. Nếu bạn gặp khó khăn hoặc cần tư vấn cụ thể, hãy tham khảo các chuyên gia hoặc nhà cung cấp dịch vụ tên miền để được hỗ trợ tốt nhất.
+    </li>
 </ol>
-<h2 id="e3e52c0f380d8f9d0e58bedd11e6a360e">🚀 C&oacute; nhiều nơi mua t&ecirc;n miền uy t&iacute;n, trong video hướng dẫn tr&ecirc;n m&igrave;nh sẽ thực h&agrave;nh tại <a target="_blank" href="https://tenten.vn">tenten.vn</a><br><br></h2>
-<p>&nbsp;</p>`
+<h4>
+    Bước 1: &nbsp;Truy cấp vào <a style="background-color:transparent;box-sizing:border-box;color:rgb(0, 123, 255);text-decoration:none;" target="_blank" rel="noopener noreferrer" href="https://tenten.vn/">tenten.vn</a> mua tên miền rồi thanh toán
+</h4>
+<h4>
+    Bước 2: &nbsp;Upload CCCD và ký xác nhận
+</h4>`
   },
   {
     id: '3',
