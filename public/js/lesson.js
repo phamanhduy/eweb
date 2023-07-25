@@ -4,9 +4,9 @@ var lessons = [
     type: 'video',
     sidebar: 'Kết quả đạt được',
     title: 'Kết quả đạt được',
-    video: 'http://localhost:4000/videos/video.m3u8',
+    video: 'http://localhost:4000/ketquadaduoc.mp4/video.m3u8',
     description: `<video id='video-js1' key='video-js1' class="video-js vjs-default-skin" data-setup='{"fluid": true}' controls>
-    <source src="http://localhost:4000/videos/video.m3u8" type="application/x-mpegURL">
+    <source src="http://localhost:4000/ketquadatduoc.mp4/video.m3u8" type="application/x-mpegURL">
     </video>
     <hr>
     <h3>
@@ -46,9 +46,9 @@ var lessons = [
     type: 'video',
     sidebar: 'Đăng ký tên miền',
     title: 'Đăng ký tên miền',
-    video: 'https://zinson.vn/wp-content/uploads/2023/07/dangkytenmien.mp4',
+    video: 'http://localhost:4000/dangkytenmien.mp4/video.m3u8',
     description: `<video id='video-js2' key='video-js2' class="video-js" data-setup='{"fluid": true}' controls>
-  <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
+  <source src="http://localhost:4000/dangkytenmien.mp4/video.m3u8" type="video/mp4">
   </video>
   <hr>
   <h2 id="e33981ec17b5480108f981996fda52978">✨T&ecirc;n miền l&agrave; g&igrave;?</h2>
@@ -71,7 +71,7 @@ var lessons = [
     type: 'video',
     sidebar: 'Đăng ký VPS (nhận 100$)',
     title: 'Đăng ký VPS',
-    video: 'https://zinson.vn/wp-content/uploads/2023/07/dangkyvps.mp4',
+    video: 'http://localhost:4000/dangkyvps.mp4/video.m3u8',
     description: `
   <video id='video-js3' key='video-js3' class="video-js" data-setup='{"fluid": true}' controls>
   <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
@@ -84,7 +84,7 @@ var lessons = [
     type: 'video',
     sidebar: 'Tạo và kết nối VPS',
     title: 'Tạo và kết nối VPS',
-    video: 'https://zinson.vn/wp-content/uploads/2023/07/taovvs.mp4',
+    video: 'http://localhost:4000/taovvs.mp4/video.m3u8',
     description: `<video id='video-js4' key='video-js4' class="video-js" data-setup='{"fluid": true}' controls>
   <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
   </video>
@@ -96,7 +96,7 @@ var lessons = [
     type: 'video',
     sidebar: 'Trỏ VPS vào tên miền',
     title: 'Trỏ VPS vào tên miền',
-    video: 'https://zinson.vn/wp-content/uploads/2023/07/trotenmien.mp4',
+    video: 'http://localhost:4000/trotenmien.mp4/video.m3u8',
     description: `
   <video id='video-js5' key='video-js5' class="video-js" data-setup='{"fluid": true}' controls>
   <source src="https://zinson.vn/wp-content/uploads/2023/06/20230301_9dd5582db91ba611_399745010841_mp4_264_hd_taobao.mp4" type="video/mp4">
@@ -109,7 +109,7 @@ var lessons = [
     type: 'video',
     sidebar: 'Tool tạo website',
     title: 'Tool tạo website',
-    video: 'https://zinson.vn/wp-content/uploads/2023/07/taoweb.mp4',
+    video: 'http://localhost:4000/taoweb.mp4/video.m3u8',
     description: `
   <video id='video-js6' key='video-js6' class="video-js" data-setup='{"fluid": true}' controls>
   <source src="https://zinson.vn/wp-content/uploads/2023/07/taoweb.mp4" type="video/mp4">
@@ -177,7 +177,7 @@ var lessons = [
     },
     sidebar: 'Tải Theme & Plugin',
     title: 'Theme và plugin tối ưu cho bán hàng',
-    video: 'https://zinson.vn/wp-content/uploads/2023/07/theme_congnghe.mp4',
+    video: 'http://localhost:4000/theme_congnghe.mp4/video.m3u8',
     description: `
   <video id='video-js7' key='video-js7' class="video-js" data-setup='{"fluid": true}' controls>
   <source src="https://zinson.vn/wp-content/uploads/2023/07/theme_congnghe.mp4" type="video/mp4">
