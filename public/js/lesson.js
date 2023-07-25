@@ -4,9 +4,9 @@ var lessons = [
     type: 'video',
     sidebar: 'Kết quả đạt được',
     title: 'Kết quả đạt được',
-    video: 'https://zinson.vn/wp-content/uploads/2023/07/ketquadaduoc.mp4',
+    video: 'http://localhost:4000/videos/video.m3u8',
     description: `<video id='video-js1' key='video-js1' class="video-js vjs-default-skin" data-setup='{"fluid": true}' controls>
-    <source src="https://zinson.vn/wp-content/uploads/2023/07/ketquadaduoc.mp4" type="video/mp4">
+    <source src="http://localhost:4000/videos/video.m3u8" type="application/x-mpegURL">
     </video>
     <hr>
     <h3>
