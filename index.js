@@ -1,7 +1,6 @@
 const express = require('express');
 var path = require('path');
 const fs = require('fs');
-const app = express();
 const bodyParser = require('body-parser');
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const ffmpeg = require('fluent-ffmpeg');
@@ -12,7 +11,7 @@ const cors = require('cors');
 
 
 ffmpeg.setFfmpegPath(ffmpegPath);
-
+const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -72,9 +71,15 @@ app.post('/receivesms', (req, res) => {
   io.emit('sendsms', {query});
 });
 
-io.on('connection', (socket) => {
 
-})
+// Set up the WebSocket connection
+io.on('connection', (socket) => {
+  console.log('A user connected');
+  // Handle disconnections
+  socket.on('disconnect', () => {
+    console.log('A user disconnected');
+  });
+});
 app.use("/home", home);
 // function streamvideo() {
 //   fs.readdir('./originvideo', (err, files) => {
@@ -133,6 +138,6 @@ app.get('/', (req, res) => {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')});
 });
 const port = process.env.POST || 4000;
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`API is listening at http://localhost:${port}`);
 });
