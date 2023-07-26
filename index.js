@@ -28,8 +28,6 @@ const server = http.createServer(app);
 const io = socketIO(server, {
   cors: {
     origin: 'https://zinson.vn',
-    methods: ["GET", "POST"],
-    credentials: true
   }
 });
 
