@@ -1,5 +1,6 @@
 const express = require('express');
 var path = require('path');
+var _ = require('lodash');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
@@ -7,7 +8,8 @@ const ffmpeg = require('fluent-ffmpeg');
 const home = require("./routes/home");
 const socketIO = require('socket.io');
 const http = require('http');
-const cors = require('cors');
+// const cors = require('cors');
+const nodemailer = require("nodemailer");
 
 
 ffmpeg.setFfmpegPath(ffmpegPath);
@@ -52,23 +54,92 @@ const checkHeaders = (req, res, next) => {
   // }
 };
 
+function sendMail(email) {
+  if (!email) {
+    return;
+  }
+  let transporter = nodemailer.createTransport({
+    service: "gmail", // e.g., "Gmail", "Outlook", etc.
+    auth: {
+      user: "thaithailuongvien@gmail.com",
+      pass: "csgpmiawnquhaqbi",
+    },
+  });
+
+  // Email data
+let mailOptions = {
+  from: "thaithailuongvien@gmail.com",
+  to: `${email}`,
+  subject: "Khóa học đã kích hoạt thành công",
+  html: `<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Email Template with Centered Button</title>
+  </head>
+  <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; text-align: center;">
+      <table cellpadding="0" cellspacing="0" width="100%" height="100%">
+          <tr>
+              <td align="center" valign="top">
+                  <table cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
+                      <tr>
+                          <td align="center" bgcolor="#f1f1f1" style="padding: 20px;">
+                              <h1>Khóa học đã được kích hoạt</h1>
+                              <p>Khóa học làm web2h của bạn đã kích hoạt thành công, vui lòng nhấn vào bên dưới</p>
+                              <a href="https://www.example.com" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;">Đến khóa học</a>
+                          </td>
+                      </tr>
+                  </table>
+              </td>
+          </tr>
+      </table>
+  </body>
+  </html>`
+};
+
+// Sending the email
+transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+    console.log("Error occurred: ", error);
+  } else {
+    console.log("Email sent successfully: ", info.response);
+  }
+});
+}
+
 // Sử dụng middleware checkHeaders cho tất cả các route
 app.use(checkHeaders);
 // Endpoint URL/skm/m1.0/dk/plain
 app.post('/receivesms', (req, res) => {
   // Lấy giá trị của query parameter key_id
-  const query = req.body;
-  console.log({query})
+  const body = req.body;
+  let textSmsArr = _.get(body, 'data', '').split('\n');
+
+  console.log(textSmsArr[0])
+  console.log(textSmsArr[1])
+
+  // Regular expression to match the pattern for "+X,XXXVND"
+const amountRegex = /\+([\d,]+)/;
+const amountMatch = textSmsArr[1].match(amountRegex);
+
+// Regular expression to match the pattern for "PHAM VAN DUY chuyen tien"
+const ndRegex = /ND:\s*(.*?)\s*web2h/;
+const nameMatch = textSmsArr[1].match(ndRegex);
+
+// Extracting the matched values
+amount = amountMatch ? amountMatch[0] : null;
+
+const name = nameMatch ? nameMatch[1] : null;
+amount = parseInt(_.replace(_.replace(amount, ',', ''), '+', ''));
+let gmail = `${name}@gmail.com`;
+const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+if (amount <= 399000 && gmailRegex.test(gmail)) {
+  sendMail(gmail);
+}
+
   res.send({"success": true,"message":"OK"});
-  // // Kiểm tra xem key_id có tồn tại và có đúng giá trị hay không
-  // if (keyId === '5f4f654fc78d0b675769aa8b13028448029e6cd5f8cd1116e70a16ab5df64757') {
-  //   // Đúng key_id, trả về kết quả thành công
-  //   res.send({"code":0,"message":"OK","value":{"dk":"c067e186801897df3e28ebb5d8ac4bb26cdde5014590566ec5dbf5364c5fbf39"}});
-  // } else {
-  //   // Sai key_id, trả về lỗi
-  //   res.status(401).send('Unauthorized');
-  // }
-  io.emit('sendsms', {query});
+  io.emit(`${name}_sendsms`, {success: true});
 });
 
 
