@@ -26,6 +26,7 @@ app.use(function (req, res, next) {
 const server = http.createServer(app);
 
 const io = socketIO(server, {
+  transports: ['websocket'],
   cors: {
     origin: 'https://zinson.vn',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
