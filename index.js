@@ -1,4 +1,5 @@
 const express = require('express');
+var path = require('path');
 const fs = require('fs');
 const app = express();
 const bodyParser = require('body-parser');
@@ -99,6 +100,9 @@ app.use("/home", home);
 // streamvideo();
 app.use(express.static('public'));
 app.use(express.static('videos'));
+app.get('/', (req, res) => {
+  res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+});
 const port = process.env.POST || 4000;
 app.listen(port, () => {
   console.log(`API is listening at http://localhost:${port}`);
