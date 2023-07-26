@@ -6,10 +6,22 @@ const bodyParser = require('body-parser');
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const ffmpeg = require('fluent-ffmpeg');
 const home = require("./routes/home");
+const socketIO = require('socket.io');
+const http = require('http');
 
 ffmpeg.setFfmpegPath(ffmpegPath);
 
 app.use(bodyParser.urlencoded({ extended: true }));
+const server = http.createServer(app);
+
+const io = socketIO(server, {
+  // cors: {
+  //   origin: 'https://www.tiktok.com',
+  //   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  //   allowedHeaders: ['Content-Type', 'Authorization'],
+  //   credentials: true
+  // }
+});
 
 // Middleware để kiểm tra headers
 const checkHeaders = (req, res, next) => {
@@ -45,7 +57,12 @@ app.post('/receivesms', (req, res) => {
   //   // Sai key_id, trả về lỗi
   //   res.status(401).send('Unauthorized');
   // }
+  io.emit('sendsms', {query});
 });
+
+io.on('connection', (socket) => {
+
+})
 app.use("/home", home);
 // function streamvideo() {
 //   fs.readdir('./originvideo', (err, files) => {
