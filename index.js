@@ -29,8 +29,8 @@ const io = socketIO(server, {
   cors: {
     origin: 'https://zinson.vn',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
+    // allowedHeaders: ['Content-Type', 'Authorization'],
+    // credentials: true
   }
 });
 
