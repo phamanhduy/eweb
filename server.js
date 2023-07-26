@@ -7,7 +7,7 @@ const ffmpeg = require('fluent-ffmpeg');
 ffmpeg.setFfmpegPath(ffmpegPath);
 
 app.use(bodyParser.urlencoded({ extended: true }));
-const port = 4000;
+const port = 80;
 // Middleware để kiểm tra headers
 const checkHeaders = (req, res, next) => {
   next();
