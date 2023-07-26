@@ -46,57 +46,57 @@ app.post('/receivesms', (req, res) => {
   // }
 });
 app.use("/home", home);
-function streamvideo() {
-  fs.readdir('./originvideo', (err, files) => {
-    files.forEach((file) => {
-      const folderName = `./videos/${file}`;
-      try {
-        if (!fs.existsSync(folderName)) {
-          fs.promises.mkdir(folderName).then(() => {
-            fs.mkdir(folderName, function () {
-              ffmpeg(`./originvideo/${file}`)
-              // set output format
-                .format('hls')
-                // set bitrate
-                .videoBitrate(1024)
-                // set target codec
-                .videoCodec('libx264')
-                // set audio bitrate
-                .audioBitrate('128k')
-                // set audio codec
-                .audioCodec('aac')
-                // set number of audio channels
-                .audioChannels(2)
-                // set hls segments time
-                .addOption('-hls_time', 10)
-                // include all the segments in the list
-                .addOption('-hls_list_size', 0)
-                // save to videos folder
-                .save(`./videos/${file}/video.m3u8`)
-                .on('start', function(commandLine) {
-                  console.log('file : ' + file);
-                  console.log('start : ' + commandLine);
-                })
-                .on('progress', function(progress) {
-                    console.log(`Đang convert !! ${file}`, Date());
-                })
-                .on('end', function() {
-                    console.log("convert thành công", file);
+// function streamvideo() {
+//   fs.readdir('./originvideo', (err, files) => {
+//     files.forEach((file) => {
+//       const folderName = `./videos/${file}`;
+//       try {
+//         if (!fs.existsSync(folderName)) {
+//           fs.promises.mkdir(folderName).then(() => {
+//             fs.mkdir(folderName, function () {
+//               ffmpeg(`./originvideo/${file}`)
+//               // set output format
+//                 .format('hls')
+//                 // set bitrate
+//                 .videoBitrate(1024)
+//                 // set target codec
+//                 .videoCodec('libx264')
+//                 // set audio bitrate
+//                 .audioBitrate('128k')
+//                 // set audio codec
+//                 .audioCodec('aac')
+//                 // set number of audio channels
+//                 .audioChannels(2)
+//                 // set hls segments time
+//                 .addOption('-hls_time', 10)
+//                 // include all the segments in the list
+//                 .addOption('-hls_list_size', 0)
+//                 // save to videos folder
+//                 .save(`./videos/${file}/video.m3u8`)
+//                 .on('start', function(commandLine) {
+//                   console.log('file : ' + file);
+//                   console.log('start : ' + commandLine);
+//                 })
+//                 .on('progress', function(progress) {
+//                     console.log(`Đang convert !! ${file}`, Date());
+//                 })
+//                 .on('end', function() {
+//                     console.log("convert thành công", file);
 
-                })
-                .on('error', function(err) {
-                    console.log("reject");
-                })
-            })
-          });
-        }
-      } catch (err) {
-        console.error(err);
-      }
-    });
-  });
-}
-streamvideo();
+//                 })
+//                 .on('error', function(err) {
+//                     console.log("reject");
+//                 })
+//             })
+//           });
+//         }
+//       } catch (err) {
+//         console.error(err);
+//       }
+//     });
+//   });
+// }
+// streamvideo();
 app.use(express.static('public'));
 app.use(express.static('videos'));
 const port = process.env.POST || 4000;
