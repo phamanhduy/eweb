@@ -134,9 +134,9 @@ app.use("/home", home);
 // streamvideo();
 app.use(express.static('public'));
 app.use(express.static('videos'));
-app.get('/', (req, res) => {
-  res.sendFile('index.html', {root: path.join(__dirname, 'public')});
-});
+// app.get('/', (req, res) => {
+//   res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+// });
 const port = process.env.POST || 4000;
 server.listen(port, () => {
   console.log(`API is listening at http://localhost:${port}`);
