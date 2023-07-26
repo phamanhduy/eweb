@@ -7,7 +7,7 @@ const ffmpeg = require('fluent-ffmpeg');
 ffmpeg.setFfmpegPath(ffmpegPath);
 
 app.use(bodyParser.urlencoded({ extended: true }));
-const port = 80;
+
 // Middleware để kiểm tra headers
 const checkHeaders = (req, res, next) => {
   next();
@@ -96,7 +96,7 @@ function streamvideo() {
 streamvideo();
 app.use(express.static('public'));
 app.use(express.static('videos'));
-
+const port = process.env.POST || 4000;
 app.listen(port, () => {
   console.log(`API is listening at http://localhost:${port}`);
 });
