@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const ffmpeg = require('fluent-ffmpeg');
+const home = require("./routes/home");
+
 ffmpeg.setFfmpegPath(ffmpegPath);
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -43,6 +45,7 @@ app.post('/receivesms', (req, res) => {
   //   res.status(401).send('Unauthorized');
   // }
 });
+app.use("/home", home);
 function streamvideo() {
   fs.readdir('./originvideo', (err, files) => {
     files.forEach((file) => {
