@@ -8,6 +8,7 @@ const ffmpeg = require('fluent-ffmpeg');
 const home = require("./routes/home");
 const socketIO = require('socket.io');
 const http = require('http');
+const cors = require('cors');
 
 
 ffmpeg.setFfmpegPath(ffmpegPath);
