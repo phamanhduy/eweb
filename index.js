@@ -25,7 +25,13 @@ app.use(function (req, res, next) {
 
 const server = http.createServer(app);
 
-const io = socketIO(server);
+const io = socketIO(server, {
+  cors: {
+    origin: 'https://zinson.vn',
+    methods: ["GET", "POST"],
+    credentials: true
+  }
+});
 
 // Middleware để kiểm tra headers
 const checkHeaders = (req, res, next) => {
